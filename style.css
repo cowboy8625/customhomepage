@@ -1,0 +1,163 @@
+/*
+ *  Locations of colors:
+ *  Clock Glow:          84
+ *  Clock Numbers:       75
+ *  Text:                39
+ *  Background Color:    23
+ *  or
+ *  Background Image:    19
+ *
+ */
+.screen {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(2, 100px);
+  /*
+   * To Set a background to image uncomment ling below and add image path,
+   */
+  /* background-image: url(../wallpapers/0002.jpg); */
+  /*
+   * To Set a background color change #222222,
+   */
+  background-color: #222222;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.search-box {
+  width: 40%;
+  height: 40px;
+  color: white;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #008B8B;
+  /*
+   * Text for Search box color
+   */
+  color: white;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 698px;
+}
+
+.digit {
+  width:10vh;
+  height:15vh;
+  margin:0 5px;
+  position:relative;
+  display:inline-block;
+}
+
+.digit .segment {
+  border-radius:5px;
+  position:absolute;
+  opacity:0.15;
+  transition:opacity 0.2s;
+  -webkit-transition:opacity 0.2s;
+  -ms-transition:opacity 0.2s;
+  -moz-transition:opacity 0.2s;
+  -o-transition:opacity 0.2s;
+}
+
+.clock-color{
+  /* Set this for the clock color */
+  background:#008B8B;
+}
+
+.digit .segment.on, .separators .separator-top .separator-bottom {
+  opacity:1;
+  /*
+   * this color needs to be the same as the clock color
+   * if you dont know hex or rgb just go on line and find the colors you want
+   */
+  box-shadow:0 0 50px rgba(0,139,139,0.7);
+  transition:opacity 0s;
+  -webkit-transition:opacity 0s;
+  -ms-transition:opacity 0s;
+  -moz-transition:opacity 0s;
+  -o-transition:opacity 0s;
+}
+
+.separators {
+  display:inline-block;
+  grid: table;
+  grid-gap: 50px 50px;
+  transform: translate(0%, -130%);
+}
+
+.separator-top {
+  width:20px;
+  height:20px;
+  border-radius:50%;
+}
+
+.separator-bottom {
+  width:20px;
+  height:20px;
+  border-radius:50%;
+}
+
+.digit .segment:nth-child(1) {
+  top:10px;
+  left:20px;
+  right:20px;
+  height:10px;
+}
+
+.digit .segment:nth-child(2) {
+  top:20px;
+  right:10px;
+  width:10px;
+  height:75px;
+  height:calc(50% - 25px);
+}
+
+.digit .segment:nth-child(3) {
+  bottom:20px;
+  right:10px;
+  width:10px;
+  height:75px;
+  height:calc(50% - 25px);
+}
+
+.digit .segment:nth-child(4) {
+  bottom:10px;
+  right:20px;
+  height:10px;
+  left:20px;
+}
+
+.digit .segment:nth-child(5) {
+  bottom:20px;
+  left:10px;
+  width:10px;
+  height:75px;
+  height:calc(50% - 25px);
+}
+
+.digit .segment:nth-child(6) {
+  top:20px;
+  left:10px;
+  width:10px;
+  height:75px;
+  height:calc(50% - 25px);
+}
+
+.digit .segment:nth-child(7) {
+  bottom:95px;
+  bottom:calc(50% - 5px);
+  right:20px;
+  left:20px;
+  height:10px;
+}
