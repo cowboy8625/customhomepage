@@ -15,7 +15,7 @@
   <a href="https://discord.gg/KwnGX8P"><img alt="Discord Chat" src="https://img.shields.io/discord/509849754155614230"></a>
 </p>
 
-I am no WebDev so I am sure a lot of this could be cleaned up so submit a pull request and lest fix it!
+I am no WebDev so getting that out of the way there for sure are a lot of things that could be cleaned up so submit a pull request and let's fix it!
 
 # Customize it
 
