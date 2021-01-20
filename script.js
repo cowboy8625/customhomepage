@@ -46,9 +46,9 @@ window.onload = function(){
 //     document.getElementById('txt').innerContent = time;
 //     var t = setTimeout(showTime, 1000);
 // }
-// function double_digits(n) {
-//     return (n<10)?"0"+n:n;
-// }
+function double_digits(n) {
+    return (n<10)?"0"+n:n;
+}
 var digitSegments = [
     [1,2,3,4,5,6],
     [2,3],
@@ -69,7 +69,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   setInterval(function() {
     var date = new Date();
+    var session = "AM";
     var hours = date.getHours(), minutes = date.getMinutes(), seconds = date.getSeconds();
+    if(hours==0){hours=12;}
+    if(hours>12){hours=hours-12;session="PM";}
+    hours=double_digits(hours);
+    minutes=double_digits(minutes);
 
     setNumber(_hours[0], Math.floor(hours/10), 1);
     setNumber(_hours[1], hours%10, 1);
@@ -79,8 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setNumber(_seconds[0], Math.floor(seconds/10), 1);
     setNumber(_seconds[1], seconds%10, 1);
+    setSession(setSession);
   }, 1000);
 });
+
+var setSession = function(s) {
+    var searchBox = document.getElementById('session');
+}
 
 var setNumber = function(digit, number, on) {
   var segments = digit.querySelectorAll('.segment');
